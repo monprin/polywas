@@ -9,9 +9,7 @@
 
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
-
-    <!-- for testing with local version of cytoscape.js -->
-    <!-- <script src="../cytoscape.js/build/cytoscape.js"></script> -->
+    
     <script src="polywas-layout.js"></script>
     <style>
       body {
@@ -59,7 +57,7 @@
                }
              },
              {
-              selector: '[type = "locus"]',
+              selector: '[type = "snp"]',
               css: {
                 'background-color': 'black',
                 'content': 'data(id)',
@@ -83,25 +81,34 @@
            ],
          elements: {
           nodes: [
-            {data: {id: '1', type: 'locus', chrom: '1', start: 10, end: 10000}},
-            {data: {id: '2', type: 'locus', chrom: '2', start: 0, end: 100000}},
-            {data: {id: '3', type: 'locus', chrom: '3', start: 10, end: 10000}},
-            {data: {id: '4', type: 'locus', chrom: '4', start: 100, end: 10000}},
-            {data: {id: '5', type: 'locus', chrom: '5', start: 100, end: 10000}},
-            {data: {id: 'a', type: 'gene', locus: '1', chrom: '1', start: 25, end: 150}},
-            {data: {id: 'b', type: 'gene', locus: '1', chrom: '1', start: 9000, end: 9190}},
-            {data: {id: 'c', type: 'gene', locus: '2', chrom: '2', start: 1000, end: 2000}},
-            {data: {id: 'd', type: 'gene', locus: '2', chrom: '2', start: 99000, end: 99099}},
-            {data: {id: 'e', type: 'gene', locus: '3', chrom: '3', start: 5000, end: 6000}},
+            {data: {id: '1', type: 'chrom', chrom: '1', start: 0, end: 10000}},
+            {data: {id: '2', type: 'chrom', chrom: '2', start: 0, end: 10000}},
+            {data: {id: '3', type: 'chrom', chrom: '3', start: 0, end: 10000}},
+            
+            {data: {id: 'v', type: 'snp', chrom: '1', start: 3500, end: 4000}},
+            {data: {id: 'w', type: 'snp', chrom: '2', start: 5000, end: 6000}},
+            {data: {id: 'x', type: 'snp', chrom: '3', start: 1000, end: 3000}},
+            {data: {id: 'y', type: 'snp', chrom: '3', start: 9988, end: 10000}},
+            {data: {id: 'z', type: 'snp', chrom: '3', start: 9999, end: 10000}},
+            
+            {data: {id: 'a', type: 'gene', snp: 'v', chrom: '1', start: 3500, end: 3525, ldegree: 3}},
+            {data: {id: 'b', type: 'gene', snp: 'v', chrom: '1', start: 3700, end: 3800, ldegree: 3}},
+            {data: {id: 'c', type: 'gene', snp: 'w', chrom: '2', start: 5000, end: 5100, ldegree: 3}},
+            {data: {id: 'd', type: 'gene', snp: 'x', chrom: '3', start: 2000, end: 2111, ldegree: 3}},
+            {data: {id: 'e', type: 'gene', snp: 'y', chrom: '3', start: 9989, end: 9990, ldegree: 3}},
+            {data: {id: 'f', type: 'gene', snp: 'z', chrom: '3', start: 9999, end: 10000, ldegree: 3}},
           ],
           edges: [
-            { data: { id: 'ad', source: 'a', target: 'd' } },
-            { data: { id: 'eb', source: 'e', target: 'd' } }]}})});
+            {data: { id: 'ad', source: 'a', target: 'd', score: 10}},
+            {data: { id: 'eb', source: 'e', target: 'd', score: 3}},
+            {data: { id: 'dc', source: 'd', target: 'c', score: 3}},
+            {data: { id: 'fc', source: 'f', target: 'c', score: 5}},
+          ]}})});
             </script>
   </head>
 
   <body>
-    <h1>Locus Layout Demo</h1>
+    <h1>snp Layout Demo</h1>
 
     <div id="cy"></div>
 
