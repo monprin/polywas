@@ -5,8 +5,6 @@ Demo site included, for an in production example, take a look at the
 [CoExpression Browser](http://lovelace.cs.umn.edu/cob)!
 
 ### JSON Formatting
-##### For Chromosome:
-`{data: {id: '1', type: 'chrom', chrom: '1', start: 0, end: 10000}}`
 ##### For SNP:
 `{data: {id: 'v', type: 'snp', chrom: '1', start: 3500, end: 4000}}`
 ##### For Genes:
