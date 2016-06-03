@@ -94,7 +94,7 @@ var register = function(cytoscape){
           return getLinePolygon((ele.data('theta')-(Math.PI/2)), options.radWidth);}
     }).lock();
     console.log('Placed Chromosomes');
-
+    console.log(chromData);
     // ===============
     // Handle the SNPs
     // ===============
@@ -210,13 +210,13 @@ function makeChroms(snpData, logSpacing){
       if(curNode !== null){chromNodes.push(curNode);}
       // Set initial values for new chromosome
       curChrom = currentValue['chrom'];
-      curZero = currentValue['pos'];
-      curPos = 0;
-      curVPos = 0;
+      curZero = currentValue['pos'] - 1;
+      curPos = 1;
+      curVPos = 1;
       curNode = {group: 'nodes', data:{
           id: currentValue['chrom'],
           type: 'chrom',
-          start: curVPos,
+          start: 0,
           end: curVPos,
       }};
     }
