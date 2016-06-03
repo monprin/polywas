@@ -13,6 +13,8 @@ var register = function(cytoscape){
     minEdgeScore: 3.0, // Minimum edge score to be rendered (3.0 is min val)
     minNodeDegree: 1, // Minimum local degree for a node to be rendered
     logSpacing: false, // Log or linear SNP layout along chromosome
+    snpSelector: '[type = "snp"]',
+    geneSelector: '[type = "gene"]',
     ready: function(){}, // on layoutready
     stop: function(){} // on layoutstop
   };
@@ -49,8 +51,8 @@ var register = function(cytoscape){
 
     // Finding and splitting up the different element types
     var nodes = cy.nodes();
-    var snps = nodes.filter('[type = "snp"]');
-    var genes = nodes.filter('[type = "gene"]');
+    var snps = nodes.filter(options.snpSelector);
+    var genes = nodes.filter(options.geneSelector);
 
     // Hide genes that are not above the threshold
     genes = genes.difference(genes.filter(function(i, ele){
