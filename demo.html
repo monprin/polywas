@@ -59,16 +59,9 @@
                }
              },
              {
-              selector: '[type = "snp"]',
+              selector: '[type = "snpG"]',
               css: {
                 'background-color': 'black',
-                'content': 'data(id)',
-                'color': 'white',
-                'text-valign': 'center',
-                'text-halign': 'center',
-                'text-background-color': 'black',
-                'text-background-opacity': '1',
-                'text-background-shape': 'roundrectangle',
               }
             },
              {
@@ -83,38 +76,31 @@
            ],
          elements: {
           nodes: [
-            {data: {id: 'z', type: 'snp', chrom: '1', start: 500, end: 2000}},
-            {data: {id: 'y', type: 'snp', chrom: '1', start: 3500, end: 4000}},
-            {data: {id: 'x', type: 'snp', chrom: '2', start: 5000, end: 6000}},
-            {data: {id: 'w', type: 'snp', chrom: '2', start: 7500, end: 9000}},
-            {data: {id: 'v', type: 'snp', chrom: '3', start: 1000, end: 3000}},
-            {data: {id: 'u', type: 'snp', chrom: '3', start: 5000, end: 6000}},
-            {data: {id: 't', type: 'snp', chrom: '3', start: 9988, end: 10000}},
-            {data: {id: 's', type: 'snp', chrom: '3', start: 9999, end: 10000}},
-
-            {data: {id: 'a', type: 'gene', snp: 'z', chrom: '1', start: 500, end: 600, ldegree: 3}},
-            {data: {id: 'b', type: 'gene', snp: 'y', chrom: '1', start: 3700, end: 3800, ldegree: 3}},
-            {data: {id: 'c', type: 'gene', snp: 'x', chrom: '2', start: 5700, end: 5800, ldegree: 3}},
-            {data: {id: 'd', type: 'gene', snp: 'w', chrom: '2', start: 8000, end: 8100, ldegree: 3}},
-            {data: {id: 'e', type: 'gene', snp: 'v', chrom: '2', start: 8100, end: 8200, ldegree: 3}},
-            {data: {id: 'f', type: 'gene', snp: 'v', chrom: '3', start: 2000, end: 2111, ldegree: 3}},
-            {data: {id: 'g', type: 'gene', snp: 'u', chrom: '3', start: 5000, end: 5100, ldegree: 3}},
-            {data: {id: 'h', type: 'gene', snp: 't', chrom: '3', start: 9989, end: 9990, ldegree: 3}},
-            {data: {id: 'i', type: 'gene', snp: 's', chrom: '3', start: 9999, end: 10000, ldegree: 3}},
+            {data:{id:'a',snp:'z',chrom:'1',start:500,end:600}},
+            {data:{id:'b',snp:'y',chrom:'1',start:3700,end:3800}},
+            {data:{id:'c',snp:'x',chrom:'2',start:5700,end:5800}},
+            {data:{id:'d',snp:'w',chrom:'2',start:8000,end:8100}},
+            {data:{id:'e',snp:'v',chrom:'2',start:8100,end:8200}},
+            {data:{id:'f',snp:'v',chrom:'3',start:2000,end:2111}},
+            {data:{id:'g',snp:'u',chrom:'3',start:5000,end:5100}},
+            {data:{id:'h',snp:'t',chrom:'3',start:7498,end:7499}},
+            {data:{id:'i',snp:'s',chrom:'3',start:7500,end:7501}},
+            {data:{id:'j',snp:'r',chrom:'3',start:11000,end:11010}},
           ],
           edges: [
-            {data: { id: 'ai', source: 'a', target: 'i', score: 10}},
-            {data: { id: 'eb', source: 'e', target: 'd', score: 3}},
-            {data: { id: 'dc', source: 'd', target: 'c', score: 3}},
-            {data: { id: 'gb', source: 'g', target: 'b', score: 3}},
-            {data: { id: 'hc', source: 'h', target: 'c', score: 3}},
-            {data: { id: 'gc', source: 'g', target: 'c', score: 5}},
+            {data:{id:'ai',source:'a',target:'i'}},
+            {data:{id:'dc',source:'d',target:'c'}},
+            {data:{id:'eb',source:'e',target:'d'}},
+            {data:{id:'gc',source:'g',target:'c'}},
+            {data:{id:'gh',source:'g',target:'h'}},
+            {data:{id:'hc',source:'h',target:'c'}},
+            
           ]}})});
             </script>
   </head>
 
   <body>
-    <h1>snp Layout Demo</h1>
+    <h1>polywas Layout Demo</h1>
 
     <div id="cy"></div>
 
