@@ -316,7 +316,7 @@ function makeChroms(cy, genes, logSpacing){
   
   // Sort the SNP data by chromosome and position
   snpData = snpData.sort(function(a,b){
-    var chromDiff = a['chrom'] - b['chrom'];
+    var chromDiff = a['chrom'].localeCompare(b['chrom']);
     if(chromDiff !== 0){return chromDiff;}
     else{return (a['pos'] - b['pos'])}
   });
