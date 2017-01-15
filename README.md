@@ -1,4 +1,4 @@
-![Example from the CoEx Browser](https://raw.githubusercontent.com/monprin/polywas/master/polwasExample.png)
+![Example from the CoEx Browser](https://raw.githubusercontent.com/monprin/polywas/master/polywasExample.png)
 
 polywas
 =======
