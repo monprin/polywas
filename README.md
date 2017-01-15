@@ -20,9 +20,7 @@ Dependencies
 Usage Instructions
 ------------------
 
-Plain HTML/JS has the extension registered for you automatically, because no `require()` is needed.
-
-Will be added to `npm` and `bower`, will be updated upon submission.
+Simply include this file in your source, or pull it directly using [RawGit](http://rawgit.com/).
 
 API
 ---
@@ -73,7 +71,3 @@ for this layout in any way:
 ```js
 {data:{id: 'ad', source: 'a', target: 'd'}}
 ```
-
-Publishing Instructions
------------------------
-Under Construction
