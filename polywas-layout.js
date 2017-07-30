@@ -97,7 +97,7 @@ var register = function(cy){
 
     // Find and set the position of the chromosomes
     var chromData = {};
-    chrom.layoutPositions(layout, options, function(i, ele){
+    chrom.layoutPositions(layout, options, function(ele, i){
       // Find the angle of the ends of the chrom line
       var radA = ((i-1)*dtheta)+(chromPad/2);
       var radB = ((i)*dtheta)-(chromPad/2);
@@ -144,7 +144,7 @@ var register = function(cy){
     
     // Position the new SNP groups
     var snpGData = {};
-    snps.layoutPositions(layout, options, function(i, ele){
+    snps.layoutPositions(layout, options, function(ele, i){
       var eleData = ele.data();
       var chrom = chromData[eleData['chrom']];
       
@@ -189,7 +189,7 @@ var register = function(cy){
       var snpG = snpGData[snp['grp']];
       
       // Find the position of the genes
-      snp['genes'].layoutPositions(layout, options, function(i, ele){
+      snp['genes'].layoutPositions(layout, options, function(ele, i){
         // Keep track of metadata
         snpG['nextOffset'] += 1;
         ele.addClass('snp'+(snpG['numSNPs'] % options.snpLevels).toString());
@@ -274,7 +274,7 @@ function makeChroms(cy, genes, logSpacing){
   
   // Sort the genes first by SNP, then by local degree
   genes = genes.sort(function(a,b){
-    var snpDiff = a.data('snp').localeCompare(b.data('snp'));
+    var snpDiff = a.data('snp').localeCompare(b.data('snp'),{},{numeric:true});
     if(snpDiff !== 0){return snpDiff;}
     else{return b.data('cur_ldegree') - a.data('cur_ldegree');}
   });
@@ -316,7 +316,7 @@ function makeChroms(cy, genes, logSpacing){
   
   // Sort the SNP data by chromosome and position
   snpData = snpData.sort(function(a,b){
-    var chromDiff = a['chrom'].localeCompare(b['chrom']);
+    var chromDiff = a['chrom'].localeCompare(b['chrom'],{},{numeric:true});
     if(chromDiff !== 0){return chromDiff;}
     else{return (a['pos'] - b['pos'])}
   });
