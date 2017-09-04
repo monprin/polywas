@@ -165,7 +165,8 @@
             return getLinePolygon(ele);
           }
         })
-        .lock();
+        .lock()
+        .unselectify();
 
       // ===============
       // Handle the SNPs
@@ -212,7 +213,8 @@
           };
           return {x: x, y: y};
         })
-        .lock();
+        .lock()
+        .unselectify();
 
       // ================
       // Handle the genes
